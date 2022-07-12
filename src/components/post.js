@@ -1,14 +1,16 @@
 import './post.css'
 
-function Post() {
+function Post(props) {
+    const { dataInput, closeFunction } = props;
+
     return (
         <div className="post">
-            <div className="post-bg">
-                <div className="post-content">
-                    <img src="/img/1.png" alt="" />
-                    <h4>name in post</h4>
-                </div>
+            <div className="post-bg" onClick={closeFunction}></div>
+            <div className="post-content">
+                <img src={dataInput.imgUrl} alt="" />
+                <h4>{dataInput.title}</h4>
             </div>
+
         </div>
     );
 }
